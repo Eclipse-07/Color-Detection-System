@@ -38,7 +38,7 @@ Built for **artists, designers, educators, and visually impaired users**, HueVer
 | **Frontend** | HTML, CSS, JavaScript, AJAX |
 | **Backend** | Flask (Python) |
 | **Database** | MongoDB |
-| **Libraries & APIs** | OpenCV, pytesseract, gTTS, Pandas, argparse, translate |
+| **Libraries & APIs** | OpenCV, gTTS, Pandas, argparse, translate |
 | **IDE** | VSCode, Jupyter Notebook, Spyder |
 
 ---
