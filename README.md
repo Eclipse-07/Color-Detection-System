@@ -1,78 +1,129 @@
-🎨 Color Detection and Translation Web App
+# 🎨 HueVerse — Intelligent Color Exploration Platform
 
-A Flask-based web application that allows users to upload an image, detect colors by clicking on any pixel, and translate the detected color name into multiple languages. The app also includes user authentication (register/login) and automatic browser launch when started.
+HueVerse is an innovative web application that redefines how we interact with colors by integrating **precise color detection**, **optical character recognition (OCR)**, and **multilingual text-to-speech (TTS)** features.  
 
-🚀 Features
+Built for **artists, designers, educators, and visually impaired users**, HueVerse combines technology and accessibility to make color exploration more interactive, inclusive, and creative.
 
-🖼️ Upload an image and view it in the browser
+---
 
-🎯 Detect the exact color name at any clicked pixel
+## 🌈 Key Features
 
-🌍 Translate color names into multiple languages using Google Translate
+### 🎯 Color Identification
+- Upload images and detect colors with pixel-level precision.  
+- Analyze hue, saturation, and brightness.  
+- Select specific regions for focused analysis.
 
-👤 Secure user authentication (register/login/logout) using MongoDB
+### 🧠 Text Extraction (OCR)
+- Extract text from images using **Tesseract OCR**.  
+- Convert extracted text into editable text or audible speech.
 
-💾 Automatic image resizing and optimized upload handling
+### 🗣️ Multilingual Text-to-Speech
+- Hear color names and text spoken aloud via **Google Text-to-Speech (gTTS)**.  
+- Supports multiple languages for cultural and linguistic exploration.
 
-🌐 Auto-launch in Chrome for convenience
+### ♿ Accessibility
+- Designed for visually impaired users with detailed auditory color descriptions.  
+- Promotes independence and inclusivity.
 
-🧠 How It Works
+### 🖼️ Image Editing
+- Crop, rotate, or adjust image brightness in real-time.  
+- Preview and download edited images instantly.
 
-The user registers or logs in.
+---
 
-Upload an image through the web interface.
+## ⚙️ Technology Stack
 
-Click on any pixel in the uploaded image.
+| Category | Technology |
+|-----------|-------------|
+| **Frontend** | HTML, CSS, JavaScript, AJAX |
+| **Backend** | Flask (Python) |
+| **Database** | MongoDB |
+| **Libraries & APIs** | OpenCV, pytesseract, gTTS, Pandas, argparse, translate |
+| **IDE** | VSCode, Jupyter Notebook, Spyder |
 
-The system extracts the pixel’s RGB value using OpenCV.
+---
 
-The app compares the RGB value with a color dataset (colors.csv) to find the closest match.
+## 💻 Installation & Setup
 
-The color name is translated into the selected language using Google Translate API.
+### 🔧 Prerequisites
+- Python 3.8 or higher  
+- MongoDB  
+- pip (Python package manager)
 
-Results are displayed instantly in the browser.
+### 🌀 Clone the Repository
+```bash
+git clone https://github.com/Eclipse-07/Color-Detection-System.git
+cd Color-Detection-System
+````
 
-🧩 Tech Stack
-Component	Technology
-Backend	Flask (Python)
-Database	MongoDB
-Image Processing	OpenCV, Pillow
-Translation	Googletrans
-Frontend	HTML, Jinja2 templates
-Authentication	Werkzeug (Password Hashing)
-🗂️ Project Structure
-├── app.py                # Main Flask application
-├── colors.csv            # Dataset containing color names and RGB values
-├── output.txt            # Sample output for color detection results
-├── output.mp3            # Audio output (from gTTS)
-├── requirements.txt      # Python dependencies
-├── uploads/              # Folder where uploaded images are stored
-└── templates/            # HTML templates (login, register, index, etc.)
+### 📦 Install Dependencies
 
-⚙️ Installation
-1. Clone the repository
-git clone https://github.com/yourusername/color-detection-translation.git
-cd color-detection-translation
-
-2. Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
-3. Set up MongoDB
+### ⚙️ Configure Tesseract Path (Windows)
 
-Make sure MongoDB is running locally:
+Inside `app.py`, verify the Tesseract path:
 
-mongod
+```python
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+```
 
+### ▶️ Run the Application
 
-Or use your connection string in app.py:
-
-client = MongoClient('your_connection_string')
-
-4. Run the app
+```bash
 python app.py
+```
+
+Then open your browser and go to:
+**[http://127.0.0.1:5000/](http://127.0.0.1:5000/)**
+
+---
+
+## 🧩 Project Structure
+
+```
+Color-Detection-System/
+│
+├── app.py                # Main Flask application
+├── colors.csv            # Color dataset
+├── output.mp3            # Sample audio output (TTS)
+├── output.txt            # OCR text output
+├── requirements.txt      # Dependencies list
+│
+├── static/               # CSS, JS, and assets
+├── templates/            # HTML templates
+├── uploads/              # Uploaded images
+└── .vscode/              # VSCode configuration
+```
+
+---
+
+## 🎯 Objectives
+
+* Deliver **unparalleled accuracy** in color detection.
+* Enhance **accessibility** through speech output for visually impaired users.
+* Promote **cultural and linguistic diversity** with multilingual support.
+* Provide a **user-friendly interface** for all experience levels.
+* Foster **innovation and creativity** across artistic and educational domains.
+
+---
+
+## 👩‍💻 Author
+
+**Developed by:** [Eclipse-07](https://github.com/Eclipse-07)
+**Project:** HueVerse — Color Detection System
+**Year:** 2025
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
 
 
-The app will automatically open in your browser at:
-
-http://127.0.0.1:5000/
-
+Would you like me to add **badges** (Python version, Flask version, license, etc.) and a **project banner image** section at the top to make it look even more professional for GitHub?
+```
