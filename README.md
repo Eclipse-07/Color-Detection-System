@@ -62,14 +62,6 @@ cd Color-Detection-System
 pip install -r requirements.txt
 ```
 
-### ⚙️ Configure Tesseract Path (Windows)
-
-Inside `app.py`, verify the Tesseract path:
-
-```python
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-```
-
 ### ▶️ Run the Application
 
 ```bash
