@@ -1,0 +1,138 @@
+body {
+    font-family: 'Gupter', serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #c7d7f9;
+    text-align: center;
+}
+h1 {
+    background: linear-gradient(to left, #1c184d, #e41376,#1791b1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 800;
+    line-height: 1;
+    font-size: 4.5rem;
+    letter-spacing: -3px;
+    margin-bottom: 10px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    margin: 5px;
+    padding: 0 20px;
+}
+.content-container p,.content-container label, .content-container select, .content-container button {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: black;
+}
+.content-container button {
+    padding: 10px 20px;
+    color: white;
+    background-color: #271d99;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.content-container button:hover {
+    background-color: #1c184d;
+}
+.language-container {
+    margin-top: 10px;
+}
+.language-container label {
+    margin-right: 10px;
+}
+.language-container select {
+    padding: 5px;
+    font-size: 16px;
+}
+.filter-panel {
+    position: fixed;
+    right: -300px; /* Hidden off-screen */
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: none; /* Hide the panel by default */
+    overflow-y: auto;
+}
+.filter-panel h2, 
+.filter-panel input[type="range"] {
+    color: white; /* Set text color to white */
+}
+.filter-panel.active {
+    display: block; /* Show the panel */
+    right: 0;
+}
+.filter-btn, .download-btn {
+    position: absolute;
+    right: 300px;
+    top: 90px;
+    padding: 5px;
+    background-color: #1c184d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+.download-btn {top: 150px;}
+.filter-btn:hover, .download-btn:hover  {background-color: #f7bf3b;}
+.filter-icon,  .download-icon {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    filter: invert(100%); /* Makes the icon white */
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e41376;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.close-btn:hover {
+    background-color: #1c184d;
+}
+.filter-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Adds space between filters */
+    margin-bottom: 20px;
+}
+.filter-container label {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+.filter-container input[type="range"] {
+    width: 100%; /* Ensure the slider fills the width */
+    margin-bottom: 10px;
+}
