@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HueVerse
+  </title>
+  <link rel="icon" href="{{ url_for('static', filename='HV.png') }}" type="img/x-icon"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Julius+Sans+One&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="../static/style1.css">
+</head>
+<body>
+  <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+  <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+  <div class="container" id="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+  <section class="forms-section">
+    <div id="radius-shape-3" class="position-absolute shadow-5-strong"></div>
+    <div class="forms">
+      <div class="form-wrapper is-active">
+        <button type="button" class="switcher switcher-login">
+          <h1>Login</h1>
+          <span class="underline"></span>
+        </button>
+        <form class="form form-login" action="{{ url_for('login') }}" method="post">
+          <fieldset>
+            <legend>Please, enter your username and password for login.</legend>
+            <div class="input-block">
+              <input id="login-email" name="email" type="email" required>
+              <label for="login-email">Email</label>
+            </div>
+            <div class="input-block">
+              <input id="login-password" name="password" type="password" required>
+              <label for="login-password">Password</label>
+            </div>
+          </fieldset>
+          <button class="button">
+            <span class="button-content">Submit</span></button>
+          <p class="registration-link">Don't have an account? <a href="#" id="show-register">Register</a></p>
+          <ul class="social-icons">
+            <li class="item"><a href="#" target="_blank"><i class="fab fa-instagram icon"></i></a></li>
+            <li class="item"><a href="#"><i class="fab fa-linkedin icon"></i></a></li>
+            <li class="item"><a href="#"><i class="fab fa-pinterest icon"></i></a></li>
+            <li class="item"><a href="#"><i class="fab fa-twitter icon"></i></a></li>
+          </ul>
+        </form>
+      </div>
+      <div class="form-wrapper">
+        <button type="button" class="switcher switcher-register">
+         <h1>Register</h1>
+          <span class="underline"></span>
+        </button>
+        <form class="form form-register" action="{{ url_for('register') }}" method="post">
+          <fieldset>
+            <legend>Please, enter your email, username, and password for registration.</legend>
+            <div class="input-block">
+              <input id="register-email" name="email" type="email" required>
+              <label for="register-email">Email</label>
+            </div>
+            <div class="input-block">
+              <input id="register-username" name="username" type="text" required>
+              <label for="register-username">Username</label>
+            </div>
+            <div class="input-block">
+              <input id="register-password" name="password" type="password" required>
+              <label for="register-password">Password</label>
+            </div>
+          </fieldset>
+          <button class="button">
+            <span class="button-content">Submit</span></button>
+          <p class="login-link">Already have an account? <a href="#" id="show-login">Login</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+  </div>
+  <script src="../static/main.js"></script>
+</body>
+</html>

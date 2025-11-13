@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='HueVerse.ico') }}" type="image/vnd.microsoft.icon">
+</head>
+<body>
+    <h1>Uploaded Image</h1>
+    {% if filename %}
+        <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image">
+    {% else %}
+        <p>No image uploaded yet.</p>
+    {% endif %}
+    <br>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file">
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
